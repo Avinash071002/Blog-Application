@@ -51,8 +51,16 @@ const Login = () => {
     const imgURL ='https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
 
 const [account, toggleaccount] = useState('login');
+const toggleSignup = () =>{
+    toggleaccount('signup');
+}
+const toggleLogin = () =>{
+    toggleaccount('login');
+}
 
-
+const onInputChange = (e) =>{
+    console.log(e.target.name,e.target.value);
+}
   return (
     <Component>
         <Box>
@@ -65,17 +73,17 @@ const [account, toggleaccount] = useState('login');
 
    <TextField variant="standard" label = "Enter password" />
    <LoginButton variant="contained">Login</LoginButton>
-   <Text>OR</Text>
-   <SignupButton variant="text">Create an account</SignupButton>
+   <Text style={{ textAlign: 'center' }}>OR</Text>
+   <SignupButton variant="text" onClick={ () => toggleSignup()}>Create an account</SignupButton>
    </Wrapper>
    :
    <Wrapper>
-   <TextField variant="standard" label ="Enter name" />
-   <TextField variant="standard" label ="Enter Username" />
-   <TextField variant="standard" label = "Enter password" />
+   <TextField variant="standard" onChange={(e) => onInputChange(e)} name='email' label ="Enter Email" />
+   <TextField variant="standard" onChange={(e) => onInputChange(e)} name='username' label ="Enter Username" />
+   <TextField variant="standard" onChange={(e) => onInputChange(e)} name='password' label = "Enter password" />
    <SignupButton variant="contained">Login</SignupButton>
-   <Text>OR</Text>
-   <LoginButton variant="text">Create an account</LoginButton>
+   <Text style={{ textAlign: 'center' }}>OR</Text>
+   <LoginButton variant="text" onClick={ () => toggleLogin()}>Already have an Account</LoginButton>
    </Wrapper>
 }
    </Box>

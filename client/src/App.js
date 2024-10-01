@@ -1,12 +1,12 @@
 
 import './App.css';
-import Login from './component/account/login';
+import Login from './component/account/Login';
 
 //components
 
 function App() {
   return (
-    <div className="App">
+    <div style={{marginTop: 100}}>
       <Login />
     </div>
   );
