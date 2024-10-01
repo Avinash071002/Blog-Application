@@ -50,15 +50,15 @@ const Login = () => {
 
     const imgURL ='https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
 
-const [account, toggleaccount] = useState('Login');
+const [account, toggleaccount] = useState('login');
 
 
   return (
     <Component>
         <Box>
-        <Image src= {imgURL}  alt = "Login" />
+        <Image src= {imgURL}  alt = "login" />
         {
-            account === 'Login' ?
+            account === 'login' ?
         
         <Wrapper>
    <TextField variant="standard" label ="Enter username or email" />
