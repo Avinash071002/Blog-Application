@@ -46,11 +46,19 @@ const Text = styled(Typography)`
   color: #878787;
 `
 
+const SignupInitialValue = {
+    name :'',
+    email:'',
+    password :''
+
+};
+
 const Login = () => {
 
     const imgURL ='https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
 
 const [account, toggleaccount] = useState('login');
+const [signup, setSignup ] = useState('SignupInitialValue');
 const toggleSignup = () =>{
     toggleaccount('signup');
 }
@@ -59,8 +67,14 @@ const toggleLogin = () =>{
 }
 
 const onInputChange = (e) =>{
-    console.log(e.target.name,e.target.value);
+    setSignup({ ...signup, [e.target.name] :e.target.value});
 }
+
+
+
+
+
+
   return (
     <Component>
         <Box>
